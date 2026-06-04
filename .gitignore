@@ -1,0 +1,25 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+
+# Bun
+bun.lockb
+
+# env files
+.env
+.env.local
+.env.*.local
+
+# editor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS
+.DS_Store
+Thumbs.db

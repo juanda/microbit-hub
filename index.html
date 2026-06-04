@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>micro:bit Hub</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>micro:bit <span class="accent">Hub</span></h1>
+        <p class="subtitle">Conecta tu micro:bit por Bluetooth o USB Serie</p>
+      </header>
+
+      <main>
+        <!-- Transportes en dos columnas -->
+        <div class="transports">
+
+          <!-- Bluetooth -->
+          <section class="card">
+            <div class="transport-header">
+              <span class="transport-dot" id="btDot"></span>
+              <h2>Bluetooth</h2>
+            </div>
+            <p class="transport-status" id="btStatus">Desconectado</p>
+            <div class="row">
+              <button id="btnConnect" class="btn btn-primary btn-sm">
+                Emparejar
+              </button>
+              <button id="btnDisconnect" class="btn btn-danger btn-sm" disabled>
+                Desconectar
+              </button>
+            </div>
+          </section>
+
+          <!-- USB Serie -->
+          <section class="card">
+            <div class="transport-header">
+              <span class="transport-dot" id="serialDot"></span>
+              <h2>USB Serie</h2>
+            </div>
+            <p class="transport-status" id="serialStatus">Desconectado</p>
+            <div class="row">
+              <button id="btnSerialConnect" class="btn btn-primary btn-sm">
+                Conectar
+              </button>
+              <button id="btnSerialDisconnect" class="btn btn-danger btn-sm" disabled>
+                Desconectar
+              </button>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Envío de mensajes -->
+        <section class="card">
+          <h2>Enviar mensaje</h2>
+          <div class="row">
+            <input
+              type="text"
+              id="messageInput"
+              placeholder="Escribe un mensaje..."
+              maxlength="64"
+              disabled
+            />
+            <button id="btnSendBt" class="btn btn-primary btn-sm" disabled title="Enviar por Bluetooth">
+              BT ➤
+            </button>
+            <button id="btnSendSerial" class="btn btn-success btn-sm" disabled title="Enviar por USB Serie">
+              USB ➤
+            </button>
+          </div>
+          <p class="hint">
+            BT: máx. 20 caracteres por paquete &nbsp;·&nbsp; USB: sin límite práctico
+          </p>
+          <div class="row" style="margin-top:0.5rem">
+            <button id="btnPing" class="btn btn-ghost btn-sm" disabled>
+              ⬡ Ping BT
+            </button>
+            <button id="btnRaw" class="btn btn-ghost btn-sm" disabled>
+              ⬡ Raw BT
+            </button>
+          </div>
+        </section>
+
+        <!-- Log de eventos -->
+        <section class="card">
+          <div class="log-header">
+            <h2>Registro de eventos</h2>
+            <button id="btnClearLog" class="btn btn-ghost btn-sm">Limpiar</button>
+          </div>
+          <div id="logContainer" class="log-container">
+            <p class="log-empty">Los eventos aparecerán aquí...</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

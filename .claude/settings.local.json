@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(bun info *)",
+      "Bash(bun install *)",
+      "Bash(bunx tsc *)",
+      "Bash(bun run *)"
+    ]
+  }
+}
